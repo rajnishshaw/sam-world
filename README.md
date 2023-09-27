@@ -25,7 +25,7 @@ The application uses several AWS resources, including Lambda functions and an AP
 
 - [AWS CLI](https://aws.amazon.com/cli/) installed and configured.
 - [AWS SAM CLI](https://aws.amazon.com/serverless/sam/) installed.
-- Python 3.6 or higher.
+- Python 3 .
   
 Optional:
 - Docker for local testing.
@@ -35,23 +35,19 @@ Optional:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo-url
-cd your-repo-folder
+git clone https://github.com/rajnishshaw/sam-world.git
+cd sam-world
 ```
 
-### 2. Initialize SAM Project (If starting from scratch)
+### 2. Build
+
+You can build the project using SAM CLI.
 
 ```bash
-sam init --runtime python3.9 --name my-http-api-runtime-info
+sam build
 ```
 
-### 3. Navigate to the Project Directory
-
-```bash
-cd my-http-api-runtime-info
-```
-
-### 4. Test Locally (Optional)
+### 3. Test Locally (Optional)
 
 You can test the function locally using the SAM CLI.
 
@@ -59,23 +55,20 @@ You can test the function locally using the SAM CLI.
 sam local start-api
 ```
 
-Then, you can use `curl` or Postman to hit the local API endpoint.
-
-### 5. Deploy the API
-
-First, package the application:
-
+Then, you can use browser, `curl` command or Postman to hit the local API endpoint.
 ```bash
-sam package --output-template packaged.yaml
+http://localhost:3000/hello
 ```
 
-Next, deploy it to AWS:
+### 4. Deploy to AWS:
+
 
 ```bash
-sam deploy --template-file packaged.yaml --stack-name my-http-api-runtime-info-stack --capabilities CAPABILITY_IAM
+sam deploy --guided
 ```
+Please provide the info as per prompt.
 
-After the deployment is successful, the API endpoint will be displayed in the Outputs section of the terminal.
+After the deployment is successful, the API endpoint will be displayed in the Outputs section of the terminal.you can use browser, `curl` command or Postman to hit the local API endpoint.
 
 
 
