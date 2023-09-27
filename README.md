@@ -77,7 +77,7 @@ After the deployment is successful, the API endpoint will be displayed in the Ou
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-sam delete --stack-name "hellosam"
+sam delete --stack-name "helloSAM"
 ```
 
 ## License
